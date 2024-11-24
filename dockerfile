@@ -1,4 +1,4 @@
-FROM centos:latest
+FROM almalinux:8
 LABEL maintainer="nadmad1@gmail.com"
 
 RUN yum install -y httpd zip unzip
