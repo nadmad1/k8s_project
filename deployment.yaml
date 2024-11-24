@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: carapp
+spec:
+  replicas: 2
+  selector: 
+    matchLabels:
+      app: carapp
+  template:
+    metadata:
+      labels:
+        app: carapp
+    spec:
+      containers:
+        - name: carapp
+          image: nadmad1/pipeline-demo
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 80
