@@ -1,8 +1,8 @@
-FROM almalinux:8
+FROM ubuntu:22.04
 LABEL maintainer="nadmad1@gmail.com"
 
 # Install necessary packages
-RUN yum install -y httpd zip unzip
+RUN apt-get update && apt-get install -y curl unzip
 
 # Add the zip file to the container
 ADD https://www.free-css.com/assets/files/free-css-templates/download/page296/carvilla.zip /var/www/html/
