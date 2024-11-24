@@ -7,9 +7,12 @@ RUN apt update && apt install -y apache2 zip unzip
 COPY carvilla.zip /var/www/html/
 
 WORKDIR /var/www/html/
-RUN unzip carvilla.zip
-RUN cp -rvf carvilla/* .
-RUN rm -rf carvilla carvilla.zip
+
+RUN unzip carvilla.zip && ls -l && \
+    cp -rvf carvilla-v1.0/* . && \
+    ls -l && \
+    rm -rf carvilla-v1.0 carvilla.zip
+
 
 CMD ["/usr/sbin/httpd", "-D", "FOREGROUND"]
 EXPOSE 8
