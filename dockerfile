@@ -1,7 +1,7 @@
 FROM centos:latest
 LABEL maintainer="nadmad1@gmail.com"
 
-RUN apt install -y httpd zip unzip
+RUN yum install -y httpd zip unzip
 
 # Copy the pre-downloaded file into the image
 COPY carvilla.zip /var/www/html/
