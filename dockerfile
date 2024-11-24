@@ -7,8 +7,9 @@ RUN yum install -y httpd zip unzip
 COPY carvilla.zip /var/www/html/
 
 WORKDIR /var/www/html/
-RUN unzip carvilla.zip
-RUN cp -rvf carvilla/* .
+RUN unzip carvilla.zip && ls -l && \
+RUN cp -rvf carvilla/* . && \
+ls -l && \
 RUN rm -rf carvilla carvilla.zip
 
 CMD ["/usr/sbin/httpd", "-D", "FOREGROUND"]
